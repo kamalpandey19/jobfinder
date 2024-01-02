@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import TextInput from "./TextInput";
 import CustomButton from "./CustomButton";
+import{apiRequest} from "../utils"
 import{Login} from "../redux/userSlice";
 const SignUp = ({ open, setOpen }) => {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ const SignUp = ({ open, setOpen }) => {
       data: data,
       method: "POST",
     });
+    
 
     if(res?.status === "failed"){
       setErrMsg(res?.message);

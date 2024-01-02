@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:8800?api-v1";
+const API_URL = "http://localhost:8800/api-v1";
 
 export const API = axios.create({
     baseURL: API_URL,
@@ -28,16 +28,17 @@ export const handleFileUpload = async (uploadFile)=>{
     const formData = new FormData();
     formData.append("file",uploadFile);
     formData.append("upload_preset","jobfinder");
-};
+
 
 try{
 const response = await axios.post(
-    "https://api.cloudinary.com/v1_1/cloudName/image/upload/",
+    "https://api.cloudinary.com/v1_1/db9v8qjmt/image/upload/",
     formData
 );
 return response.data.secure_url;
 }catch(error){
     console.log(error);
+}
 };
 
 export const updateURL = ({

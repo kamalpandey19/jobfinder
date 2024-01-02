@@ -1,8 +1,9 @@
 import mongoose, { Schema } from "mongoose";
 import validator from "validator";
 import bcrypt from "bcryptjs";
+// import dotenv from "dotenv";
 import JWT from "jsonwebtoken";
-
+// dotenv.config();
 const companySchema = new Schema({
   name: {
     type: String,
